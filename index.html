@@ -21,56 +21,68 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#F0F7FF;min-heigh
 .progress-fill{height:100%;background:linear-gradient(90deg,#FF6B6B,#FFD93D,#6BCB77,#4D96FF);border-radius:10px;transition:width 0.5s ease;width:0%;}
 .score-val{font-size:20px;font-weight:900;color:#4D96FF;white-space:nowrap;}
 
-/* ACTIVITY BLOCKS */
+/* ACTIVITY BLOCK */
 .act{background:#fff;border:1.5px solid #e0e0e0;border-radius:20px;padding:1.4rem;margin-bottom:1.25rem;box-shadow:0 2px 10px rgba(0,0,0,0.05);}
-.act-title{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
-.act-badge{background:#4D96FF;color:#fff;font-size:11px;font-weight:800;padding:3px 11px;border-radius:20px;white-space:nowrap;}
-.act-badge.red{background:#FF6B6B;}
-.act-badge.green{background:#6BCB77;}
-.act-badge.yellow{background:#e6a800;color:#fff;}
-.act-badge.purple{background:#9B59B6;}
-.act-badge.teal{background:#17a2b8;}
+.act-title{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.act-badge{color:#fff;font-size:11px;font-weight:800;padding:3px 12px;border-radius:20px;white-space:nowrap;}
+.bg-red{background:#FF6B6B;} .bg-green{background:#6BCB77;} .bg-yellow{background:#e6a800;}
+.bg-purple{background:#9B59B6;} .bg-teal{background:#17a2b8;} .bg-blue{background:#4D96FF;}
 .act-name{font-size:15px;font-weight:800;color:#333;}
-.act-desc{font-size:13px;color:#555;margin-bottom:14px;line-height:1.6;}
+.act-desc{font-size:13px;color:#666;margin-bottom:14px;line-height:1.6;background:#f8f8f8;border-radius:10px;padding:8px 12px;}
 
-/* SECTION BADGE */
-.section-sep{text-align:center;margin:1.4rem 0 1rem;position:relative;}
-.section-sep::before{content:'';position:absolute;top:50%;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#d0d0d0,transparent);}
-.section-sep span{background:#F0F7FF;padding:0 14px;position:relative;font-size:13px;font-weight:700;color:#888;}
+/* FEEDBACK GERAL */
+.act-feedback{margin-top:10px;font-size:13px;font-weight:700;padding:9px 13px;border-radius:10px;display:none;}
+.act-feedback.show{display:block;}
+.act-feedback.ok{background:#E8F5E9;color:#2E7D32;}
+.act-feedback.nok{background:#FFEBEE;color:#C62828;}
+.act-feedback.warn{background:#FFF3E0;color:#E65100;}
 
-/* TRUE/FALSE */
+/* ── ATIVIDADE 1: VERDADEIRO / FALSO ── */
 .tf-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;background:#f8f8f8;border-radius:12px;padding:10px 12px;}
 .tf-text{flex:1;font-size:13px;font-weight:600;color:#333;line-height:1.5;}
 .tf-btns{display:flex;gap:6px;flex-shrink:0;}
-.tf-btn{padding:6px 14px;border-radius:8px;border:1.5px solid #ddd;background:#f0f0f0;font-size:12px;font-weight:800;cursor:pointer;transition:all 0.18s;}
+.tf-btn{padding:7px 16px;border-radius:8px;border:1.5px solid #ddd;background:#f0f0f0;font-size:12px;font-weight:800;cursor:pointer;transition:all 0.18s;}
 .tf-btn:hover:not(:disabled){transform:scale(1.07);}
-.tf-btn.V:hover:not(:disabled){background:#E8F5E9;border-color:#66BB6A;color:#1B5E20;}
-.tf-btn.F:hover:not(:disabled){background:#FFEBEE;border-color:#EF5350;color:#B71C1C;}
 .tf-btn.ok{background:#E8F5E9;border-color:#66BB6A;color:#1B5E20;}
 .tf-btn.nok{background:#FFEBEE;border-color:#EF5350;color:#B71C1C;}
 .tf-btn.reveal{background:#E8F5E9;border-color:#66BB6A;color:#1B5E20;}
 .tf-btn:disabled{cursor:not-allowed;}
 
-/* FILL BLANK */
-.blank-sentence{font-size:15px;font-weight:600;color:#333;margin-bottom:12px;line-height:2.2;text-align:center;}
-.blank-input{border:none;border-bottom:2.5px solid #4D96FF;background:transparent;font-size:15px;font-weight:700;color:#1a237e;width:90px;text-align:center;outline:none;padding:2px 4px;}
-.blank-input.ok{border-bottom-color:#66BB6A;color:#1B5E20;}
-.blank-input.nok{border-bottom-color:#EF5350;color:#B71C1C;}
-.word-bank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
-.word-chip{background:#E8EAF6;border:1.5px solid #9FA8DA;color:#283593;border-radius:22px;padding:6px 16px;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.15s;}
-.word-chip:hover:not(.used){background:#C5CAE9;transform:scale(1.05);}
-.word-chip.used{opacity:0.35;cursor:not-allowed;pointer-events:none;}
-.word-chip.sel{outline:3px solid #FF6B6B;background:#FFCDD2;}
-.blank-slots{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:14px;}
-.blank-slot{min-width:110px;border-bottom:2.5px solid #4D96FF;text-align:center;padding:4px 8px;font-size:15px;font-weight:700;color:#1a237e;cursor:pointer;min-height:32px;transition:all 0.2s;}
-.blank-slot:hover:not(.filled){background:#E3F2FD;border-bottom-color:#1E88E5;}
-.blank-slot.filled{border-bottom-color:#66BB6A;color:#1B5E20;}
-.blank-slot.wrong-slot{border-bottom-color:#EF5350;color:#B71C1C;}
-.blank-label{display:block;font-size:10px;color:#999;font-weight:600;margin-top:2px;}
+/* ── ATIVIDADE 2: COMPLETE A FRASE ── */
+.gap-card{background:#F3F4FF;border:2px solid #C5CAE9;border-radius:16px;padding:16px 18px;margin-bottom:14px;transition:border-color 0.3s,background 0.3s;}
+.gap-card.acertou{border-color:#66BB6A;background:#F1F9F2;}
+.gap-card.errou  {border-color:#EF5350;background:#FDF4F4;}
+.gap-frase{font-size:15px;font-weight:700;color:#222;margin-bottom:14px;line-height:1.9;}
+.gap-frase .lacuna{
+  display:inline-block;
+  min-width:46px;
+  border-bottom:3px solid #4D96FF;
+  text-align:center;
+  font-weight:900;
+  color:#1a237e;
+  padding:0 8px;
+  margin:0 3px;
+  vertical-align:bottom;
+  transition:all 0.25s;
+  font-size:17px;
+}
+.gap-frase .lacuna.certa {border-bottom-color:#66BB6A;color:#1B5E20;}
+.gap-frase .lacuna.errada{border-bottom-color:#EF5350;color:#B71C1C;}
+.gap-opcoes{display:flex;flex-wrap:wrap;gap:10px;}
+.gap-btn{background:#fff;border:2px solid #9FA8DA;color:#283593;border-radius:24px;padding:9px 26px;font-size:16px;font-weight:800;cursor:pointer;transition:all 0.18s;}
+.gap-btn:hover:not(:disabled){background:#E8EAF6;border-color:#5C6BC0;transform:scale(1.06);}
+.gap-btn.certa {background:#E8F5E9;border-color:#66BB6A;color:#1B5E20;}
+.gap-btn.errada{background:#FFEBEE;border-color:#EF5350;color:#B71C1C;}
+.gap-btn.revelar{background:#E8F5E9;border-color:#66BB6A;color:#1B5E20;}
+.gap-btn:disabled{cursor:not-allowed;opacity:.8;}
+.gap-dica{font-size:12px;font-weight:700;margin-top:8px;padding:5px 10px;border-radius:8px;display:none;}
+.gap-dica.show{display:block;}
+.gap-dica.ok {background:#E8F5E9;color:#2E7D32;}
+.gap-dica.nok{background:#FFEBEE;color:#C62828;}
 
-/* DRAG CLASSIFY */
+/* ── ATIVIDADE 3: CLASSIFICAR ── */
 .classify-pool{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
-.cl-item{background:#E3F2FD;border:1.5px solid #90CAF9;color:#0D47A1;border-radius:22px;padding:7px 16px;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.15s;}
+.cl-item{background:#E3F2FD;border:1.5px solid #90CAF9;color:#0D47A1;border-radius:22px;padding:7px 16px;font-size:14px;font-weight:700;cursor:pointer;transition:all 0.15s;}
 .cl-item:hover:not(.used){transform:scale(1.05);box-shadow:0 2px 8px rgba(13,71,161,0.2);}
 .cl-item.sel{outline:3px solid #FF6B6B;transform:scale(1.06);}
 .cl-item.used{opacity:0.35;cursor:not-allowed;pointer-events:none;}
@@ -80,73 +92,80 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#F0F7FF;min-heigh
 .cl-zone.zone-bin{border-color:#4D96FF;background:#EEF2FF;}
 .cl-zone.zone-dec{border-color:#FF6B6B;background:#FFF0F0;}
 .cl-zone h4{font-size:13px;font-weight:800;margin-bottom:8px;text-align:center;}
-.zone-bin h4{color:#1A237E;}
-.zone-dec h4{color:#B71C1C;}
+.zone-bin h4{color:#1A237E;} .zone-dec h4{color:#B71C1C;}
 .cl-dropped{display:inline-block;border-radius:16px;padding:4px 12px;font-size:12px;font-weight:700;margin:3px;}
 .zone-bin .cl-dropped{background:#C5CAE9;color:#1A237E;border:1px solid #9FA8DA;}
 .zone-dec .cl-dropped{background:#FFCDD2;color:#B71C1C;border:1px solid #EF9A9A;}
 
-/* SEQUENCE / ORDER */
+/* ── ATIVIDADE 4: INTRUSO ── */
+.intruder-set{margin-bottom:16px;}
+.intruder-label{font-size:13px;font-weight:700;color:#555;margin-bottom:7px;}
+.intruder-grid{display:flex;flex-wrap:wrap;gap:10px;}
+.int-btn{background:#f0f0f0;border:2px solid #ddd;border-radius:14px;padding:12px 20px;font-size:20px;font-weight:900;cursor:pointer;transition:all 0.2s;min-width:64px;text-align:center;}
+.int-btn:hover:not(:disabled){transform:scale(1.1);border-color:#4D96FF;background:#EEF2FF;}
+.int-btn.ok {background:#E8F5E9;border-color:#66BB6A;}
+.int-btn.nok{background:#FFEBEE;border-color:#EF5350;}
+.int-btn:disabled{cursor:not-allowed;}
+.int-dica{font-size:12px;font-weight:700;margin-top:6px;padding:5px 10px;border-radius:8px;display:none;}
+.int-dica.show{display:block;}
+.int-dica.ok {background:#E8F5E9;color:#2E7D32;}
+.int-dica.nok{background:#FFEBEE;color:#C62828;}
+
+/* ── ATIVIDADE 5: ORDENAR ── */
 .seq-items{display:flex;flex-direction:column;gap:8px;}
 .seq-item{display:flex;align-items:center;gap:10px;background:#f8f8f8;border:1.5px solid #ddd;border-radius:12px;padding:10px 14px;cursor:grab;user-select:none;transition:all 0.2s;}
 .seq-item:active{cursor:grabbing;}
-.seq-item.dragging{opacity:0.5;transform:scale(0.98);}
+.seq-item.dragging{opacity:0.45;transform:scale(0.97);}
 .seq-item.drag-over{border-color:#4D96FF;background:#EEF2FF;}
 .seq-num{width:30px;height:30px;border-radius:50%;background:#4D96FF;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;}
-.seq-text{font-size:13px;font-weight:600;color:#333;}
-.seq-handle{color:#ccc;font-size:18px;margin-left:auto;}
+.seq-text{font-size:13px;font-weight:600;color:#333;flex:1;}
+.seq-handle{color:#bbb;font-size:20px;}
+.check-btn{background:linear-gradient(135deg,#4D96FF,#6BCB77);color:#fff;border:none;border-radius:12px;padding:10px 26px;font-size:14px;font-weight:800;cursor:pointer;margin-top:12px;transition:all 0.2s;box-shadow:0 3px 10px rgba(77,150,255,0.3);}
+.check-btn:hover:not(:disabled){opacity:0.9;transform:scale(1.02);}
+.check-btn:disabled{opacity:.6;cursor:not-allowed;}
 
-/* FIND INTRUDER */
-.intruder-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
-.int-btn{background:#f0f0f0;border:2px solid #ddd;border-radius:14px;padding:14px 8px;font-size:22px;font-weight:800;text-align:center;cursor:pointer;transition:all 0.2s;}
-.int-btn:hover:not(:disabled){transform:scale(1.08);border-color:#4D96FF;background:#EEF2FF;}
-.int-btn.ok{background:#E8F5E9;border-color:#66BB6A;}
-.int-btn.nok{background:#FFEBEE;border-color:#EF5350;}
-.int-btn:disabled{cursor:not-allowed;}
-.int-label{font-size:11px;font-weight:700;color:#555;margin-top:4px;display:block;}
+/* ── ATIVIDADE 6: MÚLTIPLA ESCOLHA ── */
+.mc-card{background:#F8F9FF;border:2px solid #C5CAE9;border-radius:16px;padding:16px 18px;margin-bottom:14px;transition:border-color 0.3s,background 0.3s;}
+.mc-card.acertou{border-color:#66BB6A;background:#F1F9F2;}
+.mc-card.errou  {border-color:#EF5350;background:#FDF4F4;}
+.mc-num{display:inline-block;background:#4D96FF;color:#fff;font-size:11px;font-weight:800;padding:2px 10px;border-radius:20px;margin-bottom:8px;}
+.mc-pergunta{font-size:14px;font-weight:700;color:#222;margin-bottom:12px;line-height:1.6;}
+.mc-opcoes{display:flex;flex-direction:column;gap:8px;}
+.mc-btn{background:#fff;border:2px solid #C5CAE9;color:#333;border-radius:12px;padding:10px 16px;font-size:13px;font-weight:600;cursor:pointer;text-align:left;transition:all 0.18s;line-height:1.4;}
+.mc-btn:hover:not(:disabled){background:#EEF2FF;border-color:#5C6BC0;color:#1A237E;}
+.mc-btn.certa {background:#E8F5E9;border-color:#66BB6A;color:#1B5E20;font-weight:800;}
+.mc-btn.errada{background:#FFEBEE;border-color:#EF5350;color:#B71C1C;}
+.mc-btn.revelar{background:#E8F5E9;border-color:#66BB6A;color:#1B5E20;}
+.mc-btn:disabled{cursor:not-allowed;opacity:.85;}
+.mc-dica{font-size:12px;font-weight:700;margin-top:8px;padding:6px 10px;border-radius:8px;display:none;}
+.mc-dica.show{display:block;}
+.mc-dica.ok {background:#E8F5E9;color:#2E7D32;}
+.mc-dica.nok{background:#FFEBEE;color:#C62828;}
 
-/* MEMORY GAME */
-.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
-.mem-card{aspect-ratio:1;border-radius:12px;border:2px solid #ddd;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;background:#4D96FF;color:#4D96FF;transition:all 0.3s;user-select:none;}
-.mem-card.flipped,.mem-card.matched{background:#fff;color:#333;border-color:#4D96FF;}
-.mem-card.matched{background:#E8F5E9;border-color:#66BB6A;cursor:default;}
-.mem-card.wrong{background:#FFEBEE;border-color:#EF5350;}
-.mem-info{font-size:13px;color:#555;font-weight:600;margin-bottom:10px;}
-
-/* BUTTONS GENERAL */
-.check-btn{background:linear-gradient(135deg,#4D96FF,#6BCB77);color:#fff;border:none;border-radius:12px;padding:10px 24px;font-size:14px;font-weight:800;cursor:pointer;margin-top:12px;transition:all 0.2s;box-shadow:0 3px 10px rgba(77,150,255,0.3);}
-.check-btn:hover{opacity:0.9;transform:scale(1.02);}
-.act-feedback{margin-top:10px;font-size:13px;font-weight:700;padding:8px 12px;border-radius:10px;display:none;}
-.act-feedback.show{display:block;}
-.act-feedback.ok{background:#E8F5E9;color:#2E7D32;}
-.act-feedback.nok{background:#FFEBEE;color:#C62828;}
-.act-feedback.warn{background:#FFF3E0;color:#E65100;}
-
-/* FINAL */
-.final-btn{width:100%;background:linear-gradient(135deg,#FF6B6B,#FFD93D);color:#fff;border:none;border-radius:16px;padding:16px;font-size:18px;font-weight:900;cursor:pointer;margin-top:0.5rem;letter-spacing:0.3px;transition:all 0.2s;box-shadow:0 4px 18px rgba(255,107,107,0.35);}
-.final-btn:hover{opacity:0.9;}
-
+/* SEPARADOR / FINAL */
+.section-sep{text-align:center;margin:1.4rem 0 1rem;position:relative;}
+.section-sep::before{content:'';position:absolute;top:50%;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#d0d0d0,transparent);}
+.section-sep span{background:#F0F7FF;padding:0 14px;position:relative;font-size:13px;font-weight:700;color:#888;}
+.final-btn{width:100%;background:linear-gradient(135deg,#FF6B6B,#FFD93D);color:#fff;border:none;border-radius:16px;padding:16px;font-size:18px;font-weight:900;cursor:pointer;margin-top:.5rem;transition:all 0.2s;box-shadow:0 4px 18px rgba(255,107,107,0.35);}
+.final-btn:hover{opacity:.9;}
 .result-panel{display:none;border-radius:22px;padding:2rem;text-align:center;color:#fff;margin-top:1rem;background:linear-gradient(135deg,#4D96FF,#6BCB77);}
 .result-panel.show{display:block;}
 .result-big{font-size:72px;font-weight:900;line-height:1;}
-.result-label{font-size:15px;opacity:0.85;margin-top:4px;}
+.result-label{font-size:15px;opacity:.85;margin-top:4px;}
 .result-stars{font-size:38px;margin:14px 0;letter-spacing:6px;}
 .result-msg{font-size:20px;font-weight:800;margin-top:6px;}
-.result-sub{font-size:14px;opacity:0.88;margin-top:6px;line-height:1.6;}
+.result-sub{font-size:14px;opacity:.88;margin-top:6px;line-height:1.6;}
 .report{background:rgba(255,255,255,0.15);border-radius:16px;padding:1rem 1.2rem;margin-top:1.2rem;text-align:left;}
 .report h3{font-size:15px;font-weight:900;margin-bottom:10px;text-align:center;}
 .report-row{font-size:13px;margin-bottom:5px;font-weight:600;}
-.report-row span{opacity:0.85;}
 .skill-tag{display:inline-block;border-radius:20px;padding:3px 12px;font-size:12px;font-weight:700;margin:3px;}
 .skill-ok{background:rgba(255,255,255,0.3);}
 .skill-nok{background:rgba(255,0,0,0.2);}
-
 .footer{text-align:center;padding:16px 0 8px;font-size:12px;color:#999;border-top:1px solid #ddd;margin-top:1.5rem;}
 .footer span{font-weight:700;color:#777;}
 
 @media(max-width:540px){
-  .cl-zones,.intruder-grid{grid-template-columns:1fr 1fr;}
-  .memory-grid{grid-template-columns:repeat(4,1fr);}
+  .cl-zones{grid-template-columns:1fr 1fr;}
   .header h1{font-size:20px;}
   .tf-row{flex-direction:column;}
   .tf-btns{align-self:flex-end;}
@@ -158,8 +177,7 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#F0F7FF;min-heigh
 
 <div class="header">
   <h1>🤖 A Linguagem da Máquina</h1>
-  <p>Computação — 4º Ano &nbsp;|&nbsp; Aula 3 &nbsp;|&nbsp; BNCC: EF04CO04</p>
-</div>
+ </div>
 
 <div class="score-bar">
   <span class="score-label">Progresso</span>
@@ -167,46 +185,41 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#F0F7FF;min-heigh
   <span class="score-val" id="pts">0 / 10</span>
 </div>
 
-<!-- ============================================================
-     ATIVIDADE 1 — VERDADEIRO OU FALSO (habilidade: reconhecer)
-     ============================================================ -->
-<div class="act" id="act1">
+<!-- ══════════════════════════════════════════════
+     ATIVIDADE 1 — VERDADEIRO OU FALSO
+     ══════════════════════════════════════════════ -->
+<div class="act">
   <div class="act-title">
-    <span class="act-badge red">Atividade 1</span>
+    <span class="act-badge bg-red">Atividade 1</span>
     <span class="act-name">✅ Verdadeiro ou Falso?</span>
   </div>
-  <p class="act-desc">Leia cada frase e marque se é <strong>Verdadeiro</strong> ou <strong>Falso</strong>.</p>
-
+  <p class="act-desc">Leia cada frase com atenção e marque <strong>V</strong> se for verdadeira ou <strong>F</strong> se for falsa.</p>
   <div id="tf-rows"></div>
   <div class="act-feedback" id="fb1"></div>
 </div>
 
-<!-- ============================================================
-     ATIVIDADE 2 — COMPLETAR LACUNAS (habilidade: lembrar)
-     ============================================================ -->
-<div class="act" id="act2">
+<!-- ══════════════════════════════════════════════
+     ATIVIDADE 2 — COMPLETE A FRASE
+     ══════════════════════════════════════════════ -->
+<div class="act">
   <div class="act-title">
-    <span class="act-badge green">Atividade 2</span>
-    <span class="act-name">📝 Complete as lacunas</span>
+    <span class="act-badge bg-green">Atividade 2</span>
+    <span class="act-name">📝 Complete a frase!</span>
   </div>
-  <p class="act-desc">Clique na palavra do banco e depois clique no espaço correto para completar a frase.</p>
-
-  <div class="word-bank" id="word-bank"></div>
-  <div class="blank-slots" id="blank-slots"></div>
-  <button class="check-btn" id="checkBlank" onclick="checkBlanks()">Verificar respostas</button>
+  <p class="act-desc">Cada frase tem uma palavra faltando. Leia a frase completa e clique na opção correta para preencher o espaço em branco.</p>
+  <div id="gap-cards"></div>
   <div class="act-feedback" id="fb2"></div>
 </div>
 
-<!-- ============================================================
-     ATIVIDADE 3 — CLASSIFICAR (habilidade: diferenciar)
-     ============================================================ -->
-<div class="act" id="act3">
+<!-- ══════════════════════════════════════════════
+     ATIVIDADE 3 — CLASSIFICAR
+     ══════════════════════════════════════════════ -->
+<div class="act">
   <div class="act-title">
-    <span class="act-badge yellow">Atividade 3</span>
+    <span class="act-badge bg-yellow">Atividade 3</span>
     <span class="act-name">🗂️ Classifique os números!</span>
   </div>
-  <p class="act-desc">Selecione um cartão e clique na caixa certa: os números pertencem ao sistema <strong>Binário</strong> (só usa 0 e 1) ou <strong>Decimal</strong> (usa 0 a 9)?</p>
-
+  <p class="act-desc">Selecione um cartão clicando nele e depois clique na caixa correta: o número pertence ao sistema <strong>Binário</strong> (usa só 0 e 1) ou ao <strong>Decimal</strong> (usa 0 a 9)?</p>
   <div class="classify-pool" id="cl-pool"></div>
   <div class="cl-zones">
     <div class="cl-zone zone-bin" id="zona-bin" onclick="dropCl('bin')">
@@ -221,52 +234,47 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#F0F7FF;min-heigh
   <div class="act-feedback" id="fb3"></div>
 </div>
 
-<!-- ============================================================
-     ATIVIDADE 4 — ENCONTRAR O INTRUSO (habilidade: analisar)
-     ============================================================ -->
-<div class="act" id="act4">
+<!-- ══════════════════════════════════════════════
+     ATIVIDADE 4 — ENCONTRE O INTRUSO
+     ══════════════════════════════════════════════ -->
+<div class="act">
   <div class="act-title">
-    <span class="act-badge purple">Atividade 4</span>
+    <span class="act-badge bg-purple">Atividade 4</span>
     <span class="act-name">🔍 Encontre o intruso!</span>
   </div>
-  <p class="act-desc">Em cada linha, um dos elementos <strong>NÃO pertence</strong> ao sistema binário. Clique nele!</p>
-
+  <p class="act-desc">Em cada grupo, um elemento <strong>não pertence</strong> ao sistema binário. Clique nele!</p>
   <div id="intruder-sets"></div>
   <div class="act-feedback" id="fb4"></div>
 </div>
 
-<!-- ============================================================
-     ATIVIDADE 5 — ORDENAR ETAPAS (habilidade: compreender processo)
-     ============================================================ -->
-<div class="act" id="act5">
+<!-- ══════════════════════════════════════════════
+     ATIVIDADE 5 — ORDENAR ETAPAS
+     ══════════════════════════════════════════════ -->
+<div class="act">
   <div class="act-title">
-    <span class="act-badge teal">Atividade 5</span>
+    <span class="act-badge bg-teal">Atividade 5</span>
     <span class="act-name">🔢 Ordene as etapas!</span>
   </div>
   <p class="act-desc">Arraste os cartões para colocar na ordem correta: como o computador transforma uma foto em linguagem binária?</p>
-
   <div class="seq-items" id="seq-items"></div>
-  <button class="check-btn" onclick="checkSeq()">Verificar ordem</button>
+  <button class="check-btn" id="btnSeq" onclick="checkSeq()">Verificar ordem</button>
   <div class="act-feedback" id="fb5"></div>
 </div>
 
-<!-- ============================================================
-     ATIVIDADE 6 — JOGO DA MEMÓRIA (habilidade: associar)
-     ============================================================ -->
-<div class="act" id="act6">
+<!-- ══════════════════════════════════════════════
+     ATIVIDADE 6 — MÚLTIPLA ESCOLHA
+     ══════════════════════════════════════════════ -->
+<div class="act">
   <div class="act-title">
-    <span class="act-badge red">Atividade 6</span>
-    <span class="act-name">🃏 Jogo da Memória</span>
+    <span class="act-badge bg-blue">Atividade 6</span>
+    <span class="act-name">🧠 Múltipla Escolha</span>
   </div>
-  <p class="act-desc">Encontre os pares: cada número decimal tem seu equivalente binário. Clique para virar as cartas!</p>
-
-  <div class="mem-info" id="mem-info">Pares encontrados: <strong id="mem-found">0</strong> / 6 &nbsp;|&nbsp; Tentativas: <strong id="mem-tries">0</strong></div>
-  <div class="memory-grid" id="mem-grid"></div>
+  <p class="act-desc">Leia cada pergunta e marque a alternativa correta.</p>
+  <div id="mc-cards"></div>
   <div class="act-feedback" id="fb6"></div>
 </div>
 
 <div class="section-sep"><span>📊 AVALIAÇÃO FINAL</span></div>
-
 <button class="final-btn" id="finalBtn" onclick="showResult()">🏁 Ver minha nota final</button>
 
 <div class="result-panel" id="resultPanel">
@@ -289,176 +297,216 @@ body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:#F0F7FF;min-heigh
 </div>
 
 <div class="footer"><span>Profª Adriana Bett Terebinto &nbsp;|&nbsp; Atividade Pedagógica</span></div>
-</div><!-- /wrap -->
+</div>
 
 <script>
-/* =====================================================
-   SCORING
-   ===================================================== */
-const MAX = 10;
-const actScores = { 1:0, 2:0, 3:0, 4:0, 5:0, 6:0 };
-const actDone   = { 1:false,2:false,3:false,4:false,5:false,6:false };
-const actMax    = { 1:2, 2:2, 3:2, 4:2, 5:1, 6:1 }; // total = 10
-const skillNames = {
+/* ─────────────────────────────────────────
+   PONTUAÇÃO
+───────────────────────────────────────── */
+const actScores = {1:0,2:0,3:0,4:0,5:0,6:0};
+const actDone   = {1:false,2:false,3:false,4:false,5:false,6:false};
+const actMax    = {1:2,2:2,3:2,4:2,5:1,6:1};
+const skillNames= {
   1:'Reconhecer conceitos (V/F)',
-  2:'Completar lacunas (memória)',
+  2:'Completar frases',
   3:'Classificar sistemas numéricos',
-  4:'Analisar / encontrar intruso',
-  5:'Compreender processo',
-  6:'Associar conceitos (memória)'
+  4:'Analisar e encontrar intruso',
+  5:'Compreender processo em ordem',
+  6:'Múltipla escolha — conceitos'
 };
+let totalAcertos = 0, totalErros = 0;
 
 function updateScore(){
   const total = Object.values(actScores).reduce((a,b)=>a+b,0);
-  document.getElementById('pts').textContent = total.toFixed(1)+' / 10';
+  document.getElementById('pts').textContent = Math.min(10,total).toFixed(1)+' / 10';
   const done = Object.values(actDone).filter(Boolean).length;
   document.getElementById('prog').style.width = (done/6*100)+'%';
 }
 
-/* =====================================================
+/* ─────────────────────────────────────────
    ATIVIDADE 1 — VERDADEIRO / FALSO
-   ===================================================== */
+   2 pontos (0,5 pt por item)
+───────────────────────────────────────── */
 const tfData = [
-  { text:'O computador usa os números de 0 a 9 para entender as informações.', ans:'F' },
-  { text:'Fotos, músicas e vídeos são representados no computador usando apenas 0 e 1.', ans:'V' },
-  { text:'O sistema binário usa apenas dois símbolos: 0 e 1.', ans:'V' },
-  { text:'A linguagem do computador é igual à linguagem que usamos para contar no dia a dia.', ans:'F' },
+  {t:'O computador usa os números de 0 a 9 para entender as informações.', a:'F',
+   ok:'Correto! O computador usa apenas 0 e 1.',
+   nok:'Errado! O computador usa apenas 0 e 1, não de 0 a 9.'},
+  {t:'Fotos, músicas e vídeos são guardados no computador como combinações de 0 e 1.', a:'V',
+   ok:'Isso mesmo! Tudo vira 0 e 1 no computador.',
+   nok:'Errado! Sim, tudo é convertido em 0 e 1.'},
+  {t:'O sistema binário usa apenas dois símbolos: o 0 e o 1.', a:'V',
+   ok:'Certo! Binário = dois símbolos: 0 e 1.',
+   nok:'Errado! O binário usa exatamente dois símbolos: 0 e 1.'},
+  {t:'A linguagem do computador é igual à linguagem que usamos para contar no dia a dia.', a:'F',
+   ok:'Correto! Nós usamos 0 a 9; o computador usa só 0 e 1.',
+   nok:'Errado! Nossa linguagem usa 0 a 9; o computador só usa 0 e 1.'},
 ];
-let tfScore = 0; let tfAnswered = 0;
+let tfScore=0, tfCount=0;
+const tfDone={};
 
 (function buildTF(){
   const cont = document.getElementById('tf-rows');
   tfData.forEach((d,i)=>{
     const row = document.createElement('div');
-    row.className='tf-row'; row.id='tfr'+i;
-    row.innerHTML=`<span class="tf-text">${d.text}</span>
+    row.className = 'tf-row';
+    row.innerHTML = `
+      <span class="tf-text">${d.t}</span>
       <div class="tf-btns">
-        <button class="tf-btn V" onclick="answerTF(${i},'V',this)">✅ V</button>
-        <button class="tf-btn F" onclick="answerTF(${i},'F',this)">❌ F</button>
+        <button class="tf-btn" data-v="V" onclick="answerTF(${i},'V',this)">✅ V</button>
+        <button class="tf-btn" data-v="F" onclick="answerTF(${i},'F',this)">❌ F</button>
       </div>`;
     cont.appendChild(row);
   });
 })();
 
-const tfAnsweredArr = {};
 function answerTF(i,resp,btn){
-  if(tfAnsweredArr[i]) return;
-  tfAnsweredArr[i]=true;
+  if(tfDone[i]) return;
+  tfDone[i]=true;
   const btns = btn.parentElement.querySelectorAll('.tf-btn');
   btns.forEach(b=>b.disabled=true);
-  if(resp===tfData[i].ans){
-    btn.classList.add('ok'); tfScore++;
+  if(resp===tfData[i].a){
+    btn.classList.add('ok'); tfScore++; totalAcertos++;
+    showInlineFb(btn.parentElement.parentElement, tfData[i].ok, true);
   } else {
-    btn.classList.add('nok');
-    btns.forEach(b=>{ if(b.classList.contains(tfData[i].ans)) b.classList.add('reveal'); });
+    btn.classList.add('nok'); totalErros++;
+    btns.forEach(b=>{ if(b.dataset.v===tfData[i].a) b.classList.add('reveal'); });
+    showInlineFb(btn.parentElement.parentElement, tfData[i].nok, false);
   }
-  tfAnswered++;
-  if(tfAnswered===tfData.length){
+  tfCount++;
+  if(tfCount===tfData.length){
     actDone[1]=true;
     actScores[1]=Math.round(tfScore/tfData.length*actMax[1]*10)/10;
-    const fb=document.getElementById('fb1');
-    fb.textContent=`Você acertou ${tfScore} de ${tfData.length}! (+${actScores[1].toFixed(1)} pontos)`;
-    fb.className='act-feedback show '+(tfScore>=3?'ok':tfScore>=2?'warn':'nok');
+    setFb('fb1',`Você acertou ${tfScore} de ${tfData.length}! (+${actScores[1].toFixed(1)} pts)`,
+      tfScore>=3?'ok':tfScore>=2?'warn':'nok');
     updateScore();
   }
 }
 
-/* =====================================================
-   ATIVIDADE 2 — COMPLETAR LACUNAS
-   ===================================================== */
-const blanks=[
-  { sentence:'O computador usa apenas os símbolos ___ e ___ para se comunicar.', answers:['0','1'], hints:['primeiro símbolo','segundo símbolo'] },
-  { sentence:'Tudo no computador — fotos, músicas e jogos — é transformado em combinações de ___ e ___.', answers:['0','1'], hints:['',''] },
+function showInlineFb(row, msg, ok){
+  let fb = row.querySelector('.tf-inline-fb');
+  if(!fb){ fb=document.createElement('div'); fb.className='tf-inline-fb'; fb.style.cssText='font-size:11px;font-weight:700;margin-top:5px;padding:4px 8px;border-radius:6px;'; row.appendChild(fb); }
+  fb.textContent = (ok?'✅ ':'❌ ')+msg;
+  fb.style.background = ok?'#E8F5E9':'#FFEBEE';
+  fb.style.color = ok?'#2E7D32':'#C62828';
+}
+
+/* ─────────────────────────────────────────
+   ATIVIDADE 2 — COMPLETE A FRASE
+   2 pontos (0,5 pt por item)
+   Mecânica: a frase aparece com um espaço em branco
+   destacado. Abaixo, 3 botões com opções.
+   O aluno clica na opção → o espaço é preenchido
+   e recebe feedback imediato.
+───────────────────────────────────────── */
+const gapQ = [
+  {
+    antes: 'O computador usa apenas os símbolos',
+    depois: 'e 1 para se comunicar.',
+    gabarito: '0',
+    opcoes: ['0','5','9'],
+    ok:  'Perfeito! Os símbolos são 0 e 1.',
+    nok: 'Errado! O primeiro símbolo é o 0.'
+  },
+  {
+    antes: 'No sistema binário, o 1 significa circuito',
+    depois: 'e o 0 significa circuito desligado.',
+    gabarito: 'ligado',
+    opcoes: ['ligado','quebrado','lento'],
+    ok:  'Correto! 1 = ligado, 0 = desligado.',
+    nok: 'Errado! No binário, 1 significa ligado.'
+  },
+  {
+    antes: 'Fotos, músicas e jogos são transformados em combinações de 0 e 1 pelo',
+    depois: '.',
+    gabarito: 'computador',
+    opcoes: ['computador','caderno','rádio'],
+    ok:  'Isso! O computador converte tudo em 0 e 1.',
+    nok: 'Errado! Quem faz isso é o computador.'
+  },
+  {
+    antes: 'Nós usamos os números de 0 a 9. O computador usa apenas',
+    depois: 'números diferentes.',
+    gabarito: 'dois',
+    opcoes: ['dois','dez','cem'],
+    ok:  'Exato! O computador usa dois números: 0 e 1.',
+    nok: 'Errado! O computador usa dois números: 0 e 1.'
+  },
 ];
-// Flatten to 4 slots total (2 sentences × 2 blanks)
-const wordBank=['0','1','2','5','0','1'];
-let blankSel=null; const slotFilled={};
+let gapScore=0, gapCount=0;
+const gapDone={};
 
-(function buildBlanks(){
-  const bank=document.getElementById('word-bank');
-  const allWords=[...new Set(wordBank)].concat(['2','5','9']);
-  // shuffle
-  const words=['0','1','2','5','9','0','1'].sort(()=>Math.random()-0.5);
-  words.forEach((w,i)=>{
-    const c=document.createElement('button');
-    c.className='word-chip'; c.id='wc'+i; c.textContent=w;
-    c.onclick=()=>selectWord(i,w,c);
-    bank.appendChild(c);
+(function buildGaps(){
+  const cont = document.getElementById('gap-cards');
+  gapQ.forEach((q,i)=>{
+    const card = document.createElement('div');
+    card.className = 'gap-card';
+    card.id = 'gc'+i;
+
+    // Frase com lacuna em destaque
+    const frase = document.createElement('div');
+    frase.className = 'gap-frase';
+    frase.innerHTML = q.antes+' <span class="lacuna" id="lac'+i+'">______</span> '+q.depois;
+    card.appendChild(frase);
+
+    // Botões de opção
+    const opts = document.createElement('div');
+    opts.className = 'gap-opcoes';
+    [...q.opcoes].sort(()=>Math.random()-0.5).forEach(op=>{
+      const btn = document.createElement('button');
+      btn.className = 'gap-btn';
+      btn.textContent = op;
+      btn.onclick = ()=>answerGap(i, op, btn, q);
+      opts.appendChild(btn);
+    });
+    card.appendChild(opts);
+
+    // Dica
+    const dica = document.createElement('div');
+    dica.className = 'gap-dica';
+    dica.id = 'gd'+i;
+    card.appendChild(dica);
+
+    cont.appendChild(card);
   });
-
-  const slots=document.getElementById('blank-slots');
-  // 4 slots: "O computador usa __ e __ ..." + "Tudo vira __ e __"
-  const slotDefs=[
-    {id:'s0',label:'1ª frase — 1º espaço',ans:'0'},
-    {id:'s1',label:'1ª frase — 2º espaço',ans:'1'},
-    {id:'s2',label:'2ª frase — 1º espaço',ans:'0'},
-    {id:'s3',label:'2ª frase — 2º espaço',ans:'1'},
-  ];
-
-  // Build sentence displays
-  slots.innerHTML='';
-  const s1=document.createElement('div');
-  s1.style.cssText='width:100%;text-align:center;font-size:14px;font-weight:600;color:#333;margin-bottom:10px;line-height:2.4;';
-  s1.innerHTML='O computador usa apenas os símbolos <span class="blank-slot" id="s0" onclick="fillSlot(\'s0\')"><span class="blank-label">1º</span></span> e <span class="blank-slot" id="s1" onclick="fillSlot(\'s1\')"><span class="blank-label">2º</span></span> para se comunicar.';
-  slots.appendChild(s1);
-
-  const s2=document.createElement('div');
-  s2.style.cssText='width:100%;text-align:center;font-size:14px;font-weight:600;color:#333;margin-bottom:10px;line-height:2.4;';
-  s2.innerHTML='Fotos e músicas viram combinações de <span class="blank-slot" id="s2" onclick="fillSlot(\'s2\')"><span class="blank-label">3º</span></span> e <span class="blank-slot" id="s3" onclick="fillSlot(\'s3\')"><span class="blank-label">4º</span></span> no computador.';
-  slots.appendChild(s2);
-  window._slotAns={'s0':'0','s1':'1','s2':'0','s3':'1'};
 })();
 
-let selWordIdx=null; let selWordVal=null;
-function selectWord(idx,val,el){
-  if(el.classList.contains('used')) return;
-  if(selWordIdx!==null) document.getElementById('wc'+selWordIdx).classList.remove('sel');
-  if(selWordIdx===idx){selWordIdx=null;selWordVal=null;return;}
-  selWordIdx=idx; selWordVal=val;
-  el.classList.add('sel');
-}
-const slotValues={};
-function fillSlot(sid){
-  if(selWordIdx===null) return;
-  const slot=document.getElementById(sid);
-  if(slot.classList.contains('filled')||slot.classList.contains('wrong-slot')) return;
-  slotValues[sid]=selWordVal;
-  slot.innerHTML=selWordVal+'<span class="blank-label">clicado</span>';
-  slot.classList.add('filled');
-  document.getElementById('wc'+selWordIdx).classList.add('used');
-  selWordIdx=null; selWordVal=null;
-}
-function checkBlanks(){
-  if(actDone[2]) return;
-  const ans=window._slotAns;
-  let ok=0;
-  Object.keys(ans).forEach(sid=>{
-    const slot=document.getElementById(sid);
-    const v=slotValues[sid]||'';
-    if(v===ans[sid]){ slot.classList.add('filled'); slot.classList.remove('wrong-slot'); ok++; }
-    else { slot.classList.add('wrong-slot'); slot.classList.remove('filled'); slot.innerHTML=(v||'?')+'<span class="blank-label">errado</span>'; }
-  });
-  actDone[2]=true;
-  actScores[2]=Math.round(ok/4*actMax[2]*10)/10;
-  document.getElementById('checkBlank').disabled=true;
-  const fb=document.getElementById('fb2');
-  fb.textContent=`Acertou ${ok} de 4 espaços! (+${actScores[2].toFixed(1)} pontos)`;
-  fb.className='act-feedback show '+(ok>=3?'ok':ok>=2?'warn':'nok');
-  updateScore();
+function answerGap(i, resp, btn, q){
+  if(gapDone[i]) return;
+  gapDone[i]=true;
+  const card = document.getElementById('gc'+i);
+  const lac  = document.getElementById('lac'+i);
+  const dica = document.getElementById('gd'+i);
+  card.querySelectorAll('.gap-btn').forEach(b=>b.disabled=true);
+  lac.textContent = resp;
+  if(resp===q.gabarito){
+    btn.classList.add('certa'); lac.classList.add('certa'); card.classList.add('acertou');
+    dica.textContent='✅ '+q.ok; dica.className='gap-dica show ok';
+    gapScore++; totalAcertos++;
+  } else {
+    btn.classList.add('errada'); lac.classList.add('errada'); card.classList.add('errou');
+    card.querySelectorAll('.gap-btn').forEach(b=>{ if(b.textContent===q.gabarito) b.classList.add('revelar'); });
+    dica.textContent='❌ '+q.nok; dica.className='gap-dica show nok';
+    totalErros++;
+  }
+  gapCount++;
+  if(gapCount===gapQ.length){
+    actDone[2]=true;
+    actScores[2]=Math.round(gapScore/gapQ.length*actMax[2]*10)/10;
+    setFb('fb2',`Você acertou ${gapScore} de ${gapQ.length}! (+${actScores[2].toFixed(1)} pts)`,
+      gapScore>=3?'ok':gapScore>=2?'warn':'nok');
+    updateScore();
+  }
 }
 
-/* =====================================================
+/* ─────────────────────────────────────────
    ATIVIDADE 3 — CLASSIFICAR
-   ===================================================== */
+   2 pontos
+───────────────────────────────────────── */
 const clData=[
-  {id:'c1',text:'101',correct:'bin'},
-  {id:'c2',text:'7',  correct:'dec'},
-  {id:'c3',text:'110',correct:'bin'},
-  {id:'c4',text:'9',  correct:'dec'},
-  {id:'c5',text:'000',correct:'bin'},
-  {id:'c6',text:'3',  correct:'dec'},
-  {id:'c7',text:'011',correct:'bin'},
-  {id:'c8',text:'5',  correct:'dec'},
+  {id:'c1',text:'101',c:'bin'},{id:'c2',text:'7',c:'dec'},
+  {id:'c3',text:'110',c:'bin'},{id:'c4',text:'9',c:'dec'},
+  {id:'c5',text:'000',c:'bin'},{id:'c6',text:'3',c:'dec'},
+  {id:'c7',text:'011',c:'bin'},{id:'c8',text:'5',c:'dec'},
 ];
 let clSel=null; const clPlaced={};
 
@@ -473,9 +521,9 @@ let clSel=null; const clPlaced={};
 })();
 
 function pickCl(d){
+  if(actDone[3]) return;
   const el=document.getElementById('ci-'+d.id);
   if(el.classList.contains('used')) return;
-  if(actDone[3]) return;
   if(clSel&&clSel.id===d.id){clSel=null;el.classList.remove('sel');return;}
   if(clSel) document.getElementById('ci-'+clSel.id).classList.remove('sel');
   clSel=d; el.classList.add('sel');
@@ -495,242 +543,261 @@ function dropCl(zone){
 function scoreCl(){
   actDone[3]=true;
   let ok=0;
-  clData.forEach(d=>{if(clPlaced[d.id]===d.correct) ok++;});
+  clData.forEach(d=>{ if(clPlaced[d.id]===d.c){ok++;totalAcertos++;} else totalErros++; });
   actScores[3]=Math.round(ok/clData.length*actMax[3]*10)/10;
-  const fb=document.getElementById('fb3');
-  fb.textContent=`Você classificou ${ok} de ${clData.length} corretamente! (+${actScores[3].toFixed(1)} pontos)`;
-  fb.className='act-feedback show '+(ok>=6?'ok':ok>=4?'warn':'nok');
+  setFb('fb3',`Você classificou ${ok} de ${clData.length} corretamente! (+${actScores[3].toFixed(1)} pts)`,
+    ok>=6?'ok':ok>=4?'warn':'nok');
   updateScore();
 }
 
-/* =====================================================
-   ATIVIDADE 4 — ENCONTRAR O INTRUSO
-   ===================================================== */
-const intruderSets=[
-  { label:'Conjunto A', items:['0','1','0','2'], intruder:3, tip:'O "2" não existe no sistema binário!' },
-  { label:'Conjunto B', items:['101','111','102','010'], intruder:2, tip:'"102" tem o algarismo 2 — que não existe no binário!' },
-  { label:'Conjunto C', items:['0','1','5','0'], intruder:2, tip:'O "5" pertence ao sistema decimal, não ao binário!' },
+/* ─────────────────────────────────────────
+   ATIVIDADE 4 — ENCONTRE O INTRUSO
+   2 pontos
+───────────────────────────────────────── */
+const intSets=[
+  {label:'Grupo A',items:['0','1','0','2'],intruso:3,
+   ok:'Correto! O "2" não existe no sistema binário.',
+   nok:'Errado! O intruso é o "2" — ele não existe no binário.'},
+  {label:'Grupo B',items:['101','111','102','010'],intruso:2,
+   ok:'Isso! "102" tem o dígito 2, que não existe no binário.',
+   nok:'Errado! "102" é o intruso, pois o dígito 2 não existe no binário.'},
+  {label:'Grupo C',items:['0','1','5','0'],intruso:2,
+   ok:'Exato! O "5" pertence ao sistema decimal, não ao binário.',
+   nok:'Errado! O intruso é o "5" — ele não existe no binário.'},
+  {label:'Grupo D',items:['11','00','10','23'],intruso:3,
+   ok:'Perfeito! "23" tem os dígitos 2 e 3, que não existem no binário.',
+   nok:'Errado! O intruso é "23" — contém dígitos fora do binário.'},
 ];
-let intScore=0; let intDone=0;
+let intScore=0, intCount=0;
+const intDone={};
 
 (function buildIntruder(){
   const cont=document.getElementById('intruder-sets');
-  intruderSets.forEach((set,si)=>{
-    const row=document.createElement('div');
-    row.style.cssText='margin-bottom:14px;';
-    row.innerHTML=`<div style="font-size:13px;font-weight:700;color:#555;margin-bottom:6px;">${set.label}</div>`;
+  intSets.forEach((set,si)=>{
+    const div=document.createElement('div');
+    div.className='intruder-set';
+    const lbl=document.createElement('div');
+    lbl.className='intruder-label';
+    lbl.textContent=set.label+' — clique no número que NÃO pertence ao binário:';
+    div.appendChild(lbl);
     const grid=document.createElement('div');
     grid.className='intruder-grid';
     set.items.forEach((item,ii)=>{
       const btn=document.createElement('button');
       btn.className='int-btn';
-      btn.innerHTML=`${item}<span class="int-label">${item}</span>`;
-      btn.onclick=()=>pickIntruder(si,ii,btn,set,grid);
+      btn.textContent=item;
+      btn.onclick=()=>pickInt(si,ii,btn,set,grid,div);
       grid.appendChild(btn);
     });
-    row.appendChild(grid);
-    const fb=document.createElement('div');
-    fb.className='act-feedback'; fb.id='int-fb'+si;
-    row.appendChild(fb);
-    cont.appendChild(row);
+    div.appendChild(grid);
+    const dica=document.createElement('div');
+    dica.className='int-dica'; dica.id='id'+si;
+    div.appendChild(dica);
+    cont.appendChild(div);
   });
 })();
 
-const intAnswered={};
-function pickIntruder(si,ii,btn,set,grid){
-  if(intAnswered[si]) return;
-  intAnswered[si]=true;
+function pickInt(si,ii,btn,set,grid,div){
+  if(intDone[si]) return;
+  intDone[si]=true;
   grid.querySelectorAll('.int-btn').forEach(b=>b.disabled=true);
-  const fb=document.getElementById('int-fb'+si);
-  if(ii===set.intruder){
-    btn.classList.add('ok'); intScore++;
-    fb.textContent='✅ Correto! '+set.tip; fb.className='act-feedback show ok';
+  const dica=document.getElementById('id'+si);
+  if(ii===set.intruso){
+    btn.classList.add('ok'); intScore++; totalAcertos++;
+    dica.textContent='✅ '+set.ok; dica.className='int-dica show ok';
   } else {
-    btn.classList.add('nok');
-    grid.querySelectorAll('.int-btn')[set.intruder].classList.add('ok');
-    fb.textContent='❌ Não era esse! '+set.tip; fb.className='act-feedback show nok';
+    btn.classList.add('nok'); totalErros++;
+    grid.querySelectorAll('.int-btn')[set.intruso].classList.add('ok');
+    dica.textContent='❌ '+set.nok; dica.className='int-dica show nok';
   }
-  intDone++;
-  if(intDone===intruderSets.length){
+  intCount++;
+  if(intCount===intSets.length){
     actDone[4]=true;
-    actScores[4]=Math.round(intScore/intruderSets.length*actMax[4]*10)/10;
-    const mainFb=document.getElementById('fb4');
-    mainFb.textContent=`Acertou ${intScore} de ${intruderSets.length} conjuntos! (+${actScores[4].toFixed(1)} pontos)`;
-    mainFb.className='act-feedback show '+(intScore>=2?'ok':intScore>=1?'warn':'nok');
+    actScores[4]=Math.round(intScore/intSets.length*actMax[4]*10)/10;
+    setFb('fb4',`Acertou ${intScore} de ${intSets.length} grupos! (+${actScores[4].toFixed(1)} pts)`,
+      intScore>=3?'ok':intScore>=2?'warn':'nok');
     updateScore();
   }
 }
 
-/* =====================================================
+/* ─────────────────────────────────────────
    ATIVIDADE 5 — ORDENAR ETAPAS
-   ===================================================== */
-const seqCorrect=[
+   1 ponto
+───────────────────────────────────────── */
+const seqCorreta=[
   'Você tira uma foto com o celular 📸',
   'O computador identifica cada ponto de cor da imagem 🎨',
   'Cada cor é convertida em um número 🔢',
-  'Esse número é transformado em 0s e 1s 💻',
+  'O número é transformado em 0s e 1s 💻',
   'O computador guarda a foto na memória como sequência binária 💾',
 ];
-let seqOrder=[...seqCorrect].sort(()=>Math.random()-0.5);
-let dragSrcIdx=null;
+let seqOrder=[...seqCorreta].sort(()=>Math.random()-0.5);
+let dragIdx=null;
 
-(function buildSeq(){
-  renderSeq();
-})();
+(function buildSeq(){ renderSeq(); })();
 
 function renderSeq(){
-  const cont=document.getElementById('seq-items');
-  cont.innerHTML='';
-  seqOrder.forEach((text,i)=>{
+  const cont=document.getElementById('seq-items'); cont.innerHTML='';
+  seqOrder.forEach((txt,i)=>{
     const div=document.createElement('div');
-    div.className='seq-item'; div.draggable=true;
-    div.dataset.idx=i;
-    div.innerHTML=`<div class="seq-num">${i+1}</div><div class="seq-text">${text}</div><div class="seq-handle">⠿</div>`;
-    div.addEventListener('dragstart',e=>{dragSrcIdx=i;div.classList.add('dragging');});
-    div.addEventListener('dragend',e=>{div.classList.remove('dragging');});
+    div.className='seq-item'; div.draggable=true; div.dataset.i=i;
+    div.innerHTML=`<div class="seq-num">${i+1}</div><div class="seq-text">${txt}</div><div class="seq-handle">⠿</div>`;
+    div.addEventListener('dragstart',()=>{dragIdx=i;div.classList.add('dragging');});
+    div.addEventListener('dragend',()=>div.classList.remove('dragging'));
     div.addEventListener('dragover',e=>{e.preventDefault();div.classList.add('drag-over');});
-    div.addEventListener('dragleave',e=>{div.classList.remove('drag-over');});
+    div.addEventListener('dragleave',()=>div.classList.remove('drag-over'));
     div.addEventListener('drop',e=>{
       e.preventDefault(); div.classList.remove('drag-over');
-      if(dragSrcIdx===null||dragSrcIdx===i) return;
-      const tmp=seqOrder[dragSrcIdx]; seqOrder[dragSrcIdx]=seqOrder[i]; seqOrder[i]=tmp;
+      if(dragIdx===null||dragIdx===i) return;
+      const tmp=seqOrder[dragIdx]; seqOrder[dragIdx]=seqOrder[i]; seqOrder[i]=tmp;
       renderSeq();
     });
     cont.appendChild(div);
   });
 }
-
 function checkSeq(){
   if(actDone[5]) return;
   actDone[5]=true;
-  let ok=0;
-  seqOrder.forEach((t,i)=>{ if(t===seqCorrect[i]) ok++; });
-  actScores[5]=ok===5?1:ok>=3?0.5:0;
-  const fb=document.getElementById('fb5');
+  document.getElementById('btnSeq').disabled=true;
+  let ok=0; seqOrder.forEach((t,i)=>{ if(t===seqCorreta[i]) ok++; });
   if(ok===5){
-    fb.textContent='🎉 Perfeito! A ordem está correta! (+1 ponto)';
-    fb.className='act-feedback show ok';
+    actScores[5]=1; totalAcertos+=5;
+    setFb('fb5','🎉 Perfeito! Todas as etapas na ordem certa! (+1 ponto)','ok');
   } else {
-    // show correct order
-    seqOrder=[...seqCorrect]; renderSeq();
-    fb.textContent=`Você acertou ${ok} de 5 posições. A ordem correta foi mostrada. (+${actScores[5]} ponto)`;
-    fb.className='act-feedback show '+(ok>=3?'warn':'nok');
+    actScores[5]=ok>=3?0.5:0;
+    totalErros+=(5-ok); totalAcertos+=ok;
+    seqOrder=[...seqCorreta]; renderSeq();
+    setFb('fb5',`Você acertou ${ok} de 5 posições. A ordem correta foi mostrada. (+${actScores[5]} pt)`,ok>=3?'warn':'nok');
   }
   updateScore();
 }
 
-/* =====================================================
-   ATIVIDADE 6 — JOGO DA MEMÓRIA
-   ===================================================== */
-const memPairs=[
-  {id:'A',dec:'0',bin:'0'},
-  {id:'B',dec:'1',bin:'1'},
-  {id:'C',dec:'2',bin:'10'},
-  {id:'D',dec:'3',bin:'11'},
-  {id:'E',dec:'4',bin:'100'},
-  {id:'F',dec:'5',bin:'101'},
+/* ─────────────────────────────────────────
+   ATIVIDADE 6 — MÚLTIPLA ESCOLHA
+   1 ponto (0,25 pt por item)
+───────────────────────────────────────── */
+const mcQ=[
+  {
+    p:'Qual é a linguagem que o computador entende?',
+    ops:['Português','Inglês','Binário (0 e 1)','Matemática'],
+    g:2,
+    ok:'Correto! O computador entende a linguagem binária: 0 e 1.',
+    nok:'Errado! O computador entende a linguagem binária, feita de 0 e 1.'
+  },
+  {
+    p:'O que representa o "1" no sistema binário do computador?',
+    ops:['Circuito desligado','Circuito ligado','Número dez','Letra A'],
+    g:1,
+    ok:'Isso! No binário, 1 = circuito ligado.',
+    nok:'Errado! O 1 representa o circuito ligado.'
+  },
+  {
+    p:'Qual destes objetos do dia a dia funciona como o sistema binário?',
+    ops:['Régua','Relógio analógico','Interruptor de luz','Calculadora'],
+    g:2,
+    ok:'Exato! O interruptor só tem dois estados: ligado ou desligado — igual ao binário.',
+    nok:'Errado! O interruptor de luz é o melhor exemplo: só ligado ou desligado.'
+  },
+  {
+    p:'Uma música guardada no computador é representada como:',
+    ops:['Notas musicais coloridas','Palavras em inglês','Combinações de 0 e 1','Imagens de instrumentos'],
+    g:2,
+    ok:'Correto! Tudo no computador — músicas, fotos, jogos — vira 0 e 1.',
+    nok:'Errado! Músicas e qualquer arquivo viram 0 e 1 no computador.'
+  },
 ];
-const memCards=[];
-memPairs.forEach(p=>{
-  memCards.push({pairId:p.id,face:p.dec,type:'dec'});
-  memCards.push({pairId:p.id,face:p.bin,type:'bin'});
-});
-memCards.sort(()=>Math.random()-0.5);
+let mcScore=0, mcCount=0;
+const mcDone={};
 
-let memFlipped=[]; let memMatched=0; let memTries=0; let memLocked=false;
-
-(function buildMem(){
-  const grid=document.getElementById('mem-grid');
-  memCards.forEach((c,i)=>{
-    const div=document.createElement('div');
-    div.className='mem-card'; div.id='mc'+i; div.dataset.idx=i;
-    div.textContent='?';
-    div.onclick=()=>flipMem(i);
-    grid.appendChild(div);
+(function buildMC(){
+  const cont=document.getElementById('mc-cards');
+  mcQ.forEach((q,i)=>{
+    const card=document.createElement('div');
+    card.className='mc-card'; card.id='mcc'+i;
+    card.innerHTML=`<span class="mc-num">Questão ${i+1}</span>
+      <div class="mc-pergunta">${q.p}</div>`;
+    const opts=document.createElement('div');
+    opts.className='mc-opcoes';
+    // Keep original order (A, B, C, D)
+    q.ops.forEach((op,oi)=>{
+      const btn=document.createElement('button');
+      btn.className='mc-btn';
+      btn.innerHTML=`<strong>${String.fromCharCode(65+oi)})</strong> ${op}`;
+      btn.onclick=()=>answerMC(i,oi,btn,q,card,opts);
+      opts.appendChild(btn);
+    });
+    card.appendChild(opts);
+    const dica=document.createElement('div');
+    dica.className='mc-dica'; dica.id='md'+i;
+    card.appendChild(dica);
+    cont.appendChild(card);
   });
 })();
 
-function flipMem(i){
-  if(memLocked||actDone[6]) return;
-  const card=document.getElementById('mc'+i);
-  if(card.classList.contains('flipped')||card.classList.contains('matched')) return;
-  card.classList.add('flipped');
-  card.textContent=memCards[i].face;
-  memFlipped.push(i);
-  if(memFlipped.length===2){
-    memTries++;
-    document.getElementById('mem-tries').textContent=memTries;
-    memLocked=true;
-    const [a,b]=memFlipped;
-    if(memCards[a].pairId===memCards[b].pairId){
-      document.getElementById('mc'+a).classList.replace('flipped','matched');
-      document.getElementById('mc'+b).classList.replace('flipped','matched');
-      memMatched++;
-      document.getElementById('mem-found').textContent=memMatched;
-      memFlipped=[]; memLocked=false;
-      if(memMatched===6){
-        actDone[6]=true;
-        actScores[6]=memTries<=8?1:memTries<=12?0.7:0.4;
-        const fb=document.getElementById('fb6');
-        fb.textContent=`🎉 Parabéns! Você encontrou todos os pares em ${memTries} tentativas! (+${actScores[6].toFixed(1)} ponto)`;
-        fb.className='act-feedback show ok';
-        updateScore();
-      }
-    } else {
-      document.getElementById('mc'+a).classList.add('wrong');
-      document.getElementById('mc'+b).classList.add('wrong');
-      setTimeout(()=>{
-        ['mc'+a,'mc'+b].forEach(id=>{
-          const el=document.getElementById(id);
-          el.classList.remove('flipped','wrong');
-          el.textContent='?';
-        });
-        memFlipped=[]; memLocked=false;
-      },900);
-    }
+function answerMC(i,oi,btn,q,card,opts){
+  if(mcDone[i]) return;
+  mcDone[i]=true;
+  opts.querySelectorAll('.mc-btn').forEach(b=>b.disabled=true);
+  const dica=document.getElementById('md'+i);
+  if(oi===q.g){
+    btn.classList.add('certa'); card.classList.add('acertou');
+    dica.textContent='✅ '+q.ok; dica.className='mc-dica show ok';
+    mcScore++; totalAcertos++;
+  } else {
+    btn.classList.add('errada'); card.classList.add('errou');
+    opts.querySelectorAll('.mc-btn')[q.g].classList.add('revelar');
+    dica.textContent='❌ '+q.nok; dica.className='mc-dica show nok';
+    totalErros++;
+  }
+  mcCount++;
+  if(mcCount===mcQ.length){
+    actDone[6]=true;
+    actScores[6]=Math.round(mcScore/mcQ.length*actMax[6]*10)/10;
+    setFb('fb6',`Você acertou ${mcScore} de ${mcQ.length}! (+${actScores[6].toFixed(1)} pt)`,
+      mcScore>=3?'ok':mcScore>=2?'warn':'nok');
+    updateScore();
   }
 }
 
-/* =====================================================
-   RESULTADO FINAL
-   ===================================================== */
-function showResult(){
-  const total=Math.min(10,Math.round(Object.values(actScores).reduce((a,b)=>a+b,0)*10)/10);
-  const allPts=Object.values(actScores).reduce((a,b)=>a+b,0);
-  // estimate acertos / erros
-  const pct=Math.round(total/10*100);
+/* ─────────────────────────────────────────
+   HELPERS
+───────────────────────────────────────── */
+function setFb(id,msg,cls){
+  const el=document.getElementById(id);
+  el.textContent=msg; el.className='act-feedback show '+cls;
+}
 
+/* ─────────────────────────────────────────
+   RESULTADO FINAL
+───────────────────────────────────────── */
+function showResult(){
+  const raw=Object.values(actScores).reduce((a,b)=>a+b,0);
+  const total=Math.min(10,Math.round(raw*10)/10);
+  const pct=Math.round(total/10*100);
   document.getElementById('r-nota').textContent=total.toFixed(1);
   document.getElementById('r-pct').textContent=pct+'%';
+  document.getElementById('r-acertos').textContent=totalAcertos+' acertos';
+  document.getElementById('r-erros').textContent=totalErros+' erros';
   document.getElementById('pts').textContent=total.toFixed(1)+' / 10';
 
   let stars,msg,sub;
   if(total>=9){stars='⭐⭐⭐';msg='Excelente domínio do conteúdo!';sub='Você entendeu muito bem a linguagem da máquina. Parabéns!';}
   else if(total>=7){stars='⭐⭐';msg='Bom domínio do conteúdo!';sub='Você foi muito bem! Revise os pontos que errou.';}
-  else if(total>=5){stars='⭐';msg='Domínio parcial. Recomenda-se revisão.';sub='Você está no caminho certo! Releia o conteúdo sobre o sistema binário.';}
-  else{stars='📖';msg='Necessita reforço e retomada do conteúdo.';sub='Não desanime! Peça ajuda à professora e tente novamente.';}
+  else if(total>=5){stars='⭐';msg='Domínio parcial. Recomenda-se revisão.';sub='Releia o conteúdo sobre o sistema binário e tente novamente.';}
+  else{stars='📖';msg='Necessita reforço e retomada.';sub='Não desanime! Peça ajuda à professora e tente de novo.';}
   document.getElementById('r-stars').textContent=stars;
   document.getElementById('r-msg').textContent=msg;
   document.getElementById('r-sub').textContent=sub;
 
-  // acertos/erros estimate
-  const acertos=Math.round(pct/100*18);
-  const erros=18-acertos;
-  document.getElementById('r-acertos').textContent=acertos+' questões / itens';
-  document.getElementById('r-erros').textContent=erros+' questões / itens';
-
-  // skills
   const okDiv=document.getElementById('r-ok');
   const nkDiv=document.getElementById('r-nok');
   okDiv.innerHTML=''; nkDiv.innerHTML='';
   Object.entries(actScores).forEach(([k,v])=>{
-    const max=actMax[k];
-    const pctSkill=v/max;
+    const pctS=v/actMax[k];
     const tag=document.createElement('span');
-    tag.className='skill-tag '+(pctSkill>=0.6?'skill-ok':'skill-nok');
+    tag.className='skill-tag '+(pctS>=0.6?'skill-ok':'skill-nok');
     tag.textContent=skillNames[k];
-    if(pctSkill>=0.6) okDiv.appendChild(tag);
-    else nkDiv.appendChild(tag);
+    (pctS>=0.6?okDiv:nkDiv).appendChild(tag);
   });
   if(!okDiv.innerHTML) okDiv.innerHTML='<span style="opacity:.7;font-size:13px;">—</span>';
   if(!nkDiv.innerHTML) nkDiv.innerHTML='<span style="opacity:.7;font-size:13px;">—</span>';
